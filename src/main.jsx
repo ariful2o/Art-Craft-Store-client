@@ -7,28 +7,43 @@ import {
 import './index.css';
 import ErrorPage from './pages/ErrorPage.jsx';
 import Home from './pages/Home/Home.jsx';
-import Root from './Root.jsx';
 import AuthProvider from './provider/AuthProvider.jsx';
+import Root from './Root.jsx';
 import Login from './authentication/Login.jsx';
 import Register from './authentication/Register.jsx';
+import AllArtCraft from './pages/AllArtCraft/AllArtCraft.jsx';
+import AddArtCraft from './pages/AllArtCraft/AddArtCraft.jsx';
+import MyListArtCraft from './pages/AllArtCraft/MyListArtCraft.jsx'
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
     errorElement: <ErrorPage />,
-    children: [
+    children:[
       {
-        path: '/',
-        element: <Home></Home>,
+        path:'/',
+        element:<Home></Home>
       },
       {
-        path: '/login',
-        element: <Login></Login>,
+        path:'/allartcraft',
+        element:<AllArtCraft></AllArtCraft>,
       },
       {
-        path: '/register',
-        element: <Register></Register>,
+        path:'/addartcraft',
+        element:<AddArtCraft></AddArtCraft>,
+      },
+      {
+        path:'/myartcraft',
+        element:<MyListArtCraft></MyListArtCraft>
+      },
+      {
+        path:'/login',
+        element:<Login></Login>
+      },
+      {
+        path:'/register',
+        element:<Register></Register>
       }
     ]
   },
