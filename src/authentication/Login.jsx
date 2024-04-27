@@ -1,31 +1,48 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../provider/AuthProvider";
+import { toast, ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
 export default function Login() {
+  const { loginUser } = useContext(AuthContext)
   const [showPassword, setShowPassword] = useState(true)
   const handleShowPassWord = () => {
     setShowPassword(!showPassword)
   }
+  const handleLogin = (e) => {
+    e.preventDefault()
+
+    const form = new FormData(e.currentTarget)
+    const email = form.get('email')
+    const password = form.get('password')
+    loginUser(email, password)
+      .then(result => {
+        toast.success("Login Success")
+      })
+      .catch(error => toast.error(error.message))
+  }
+
   return (
 
-    <div className="min-h-svh flex items-center bg-base-200">
+    <div className="min-h-svh flex items-center bg-base-200"><ToastContainer />
       <div className="card shrink-0 w-full max-w-3xl mx-auto shadow-2xl bg-base-100">
         <h2 className="text-center font-black text-4xl my-4">Login Now</h2>
-        <form className="card-body">
+        <form className="card-body" onSubmit={handleLogin}>
           <div className="form-control">
             <label className="label">
               <span className="label-text">Email</span>
             </label>
-            <input type="email" placeholder="email" className="input input-bordered" required />
+            <input type="email" name="email" placeholder="email" className="input input-bordered" required />
           </div>
           <div className="form-control">
             <label className="label">
               <span className="label-text">Password</span>
             </label>
-            <input type={!showPassword ? "text" : "password"} placeholder="password" className="input input-bordered" required />
+            <input type={!showPassword ? "text" : "password"} name="password" placeholder="password" className="input input-bordered" required />
             <div className="absolute right-11 top-[250px]">
               {showPassword ? <span onClick={handleShowPassWord}><FaRegEye /></span> : <span onClick={handleShowPassWord}><FaRegEyeSlash /></span>
               }

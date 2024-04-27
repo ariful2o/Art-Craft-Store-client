@@ -4,6 +4,7 @@ import { AuthContext } from "../provider/AuthProvider";
 import auth from "../firebase/firebase.init";
 import { sendEmailVerification } from "firebase/auth";
 import { toast, ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 
 
@@ -63,6 +64,7 @@ export default function Register() {
     registerUser(email, password)
       .then(() => {
         // const usr = result.user
+        toast.success("Register Successfull")
         e.target.reset()
         navigate('/')
         //update data
@@ -73,7 +75,7 @@ export default function Register() {
           });
 
       })
-      .catch((err) => console.log(err))
+      .catch((err) => toast.error(err.message))
   }
   //password type chenk strong
   const strongPasswordck = (event) => {
