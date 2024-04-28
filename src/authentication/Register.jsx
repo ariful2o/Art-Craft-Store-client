@@ -17,8 +17,7 @@ export default function Register() {
   const [showPassword, setShowPassword] = useState(true)
   const [showPassword2, setShowPassword2] = useState(true)
   const navigate = useNavigate()
-  const [name, setName] = useState(null)
-  const [photoURL, setPhotoURL] = useState(null)
+
 
   const handleShowPassWord = () => {
     setShowPassword(!showPassword)
@@ -65,13 +64,13 @@ export default function Register() {
         // const usr = result.user
         toast.success("Register Successfull")
         e.target.reset()
-        navigate('/')
         //update data
         sendEmailVerification(auth.currentUser)
           .then(() => {
             toast('Email verification sent!')
             // ...
           });
+        navigate('/')
 
       })
       .catch((err) => toast.error(err.message))
@@ -82,7 +81,7 @@ export default function Register() {
     let regex = /^(?=.*[A-Z])(?=.*\d)(?=.*[^\w\s]).+$/;
 
     if (!regex.test(password)) {
-      setWeekPassword(`Password Must be "Uppercase, Lowercase and Number"`)
+      setWeekPassword(`Password Must be "Uppercase, Lowercase, Number and Special Characters"`)
       return
     } else {
       setWeekPassword('')

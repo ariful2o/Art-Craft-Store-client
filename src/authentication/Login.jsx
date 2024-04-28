@@ -4,15 +4,18 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import { toast, ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import { FaGithub, FaGoogle } from "react-icons/fa6";
 
 
 
 export default function Login() {
-  const { loginUser } = useContext(AuthContext)
+  const { loginUser, loginWithGoogle, loginWithgithub } = useContext(AuthContext)
   const [showPassword, setShowPassword] = useState(true)
+
   const handleShowPassWord = () => {
     setShowPassword(!showPassword)
   }
+
   const handleLogin = (e) => {
     e.preventDefault()
 
@@ -20,11 +23,23 @@ export default function Login() {
     const email = form.get('email')
     const password = form.get('password')
     loginUser(email, password)
-      .then(result => {
+      .then(() => {
         toast.success("Login Success")
       })
       .catch(error => toast.error(error.message))
   }
+
+  const handleGoogleLogin = () => {
+    loginWithGoogle()
+      .catch(error => toast.error(error.message))
+  }
+
+  const handleGithubLogin = () => {
+    loginWithgithub()
+      .catch(error => toast.error(error.message))
+  }
+
+
 
   return (
 
@@ -56,8 +71,16 @@ export default function Login() {
           </div>
           <p className="text-center py-4">You Don&apos;t Have Account ?<Link to="/register" className="text-[#F75B5F] font-bold"> Register</Link></p>
         </form>
+        <div className="flex mx-auto gap-4 pb-6">
+          <button onClick={handleGoogleLogin} className="text-white bg-[#3b5998] hover:bg-[#3b5998]/90 focus:ring-4 focus:outline-none focus:ring-[#3b5998]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#3b5998]/55 me-2 mb-2 gap-2">
+            <FaGoogle />
+            Login With Google
+          </button>
+          <button onClick={handleGithubLogin} className="text-white bg-[#1da1f2] hover:bg-[#1da1f2]/90 focus:ring-4 focus:outline-none focus:ring-[#1da1f2]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#1da1f2]/55 me-2 mb-2 gap-2">
+            <FaGithub />
+            Login With GitHub
+          </button></div>
       </div>
     </div>
-
   )
 }

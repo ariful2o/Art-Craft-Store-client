@@ -17,7 +17,19 @@ export default function AddArtCraft() {
     const rating = form.get('rating')
     const stock = form.get('stock')
     const customization = form.get('customization')
-    console.log({ name, image, email, item_name, subcategory_Name, processing_time, description, price, rating, stock, customization })
+    const artCraftData={ name, image, email, item_name, subcategory_Name, processing_time, description, price, rating, stock, customization }
+
+    fetch('http://localhost:5000/addartcraft',{
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(artCraftData)
+    })
+    .then(res=>res.json())
+    .then(data=>{
+      data.acknowledged && toast.success('Add Art Craft Success')
+    })
 
   }
 

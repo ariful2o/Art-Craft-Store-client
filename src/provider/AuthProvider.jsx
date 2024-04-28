@@ -33,6 +33,7 @@ export default function AuthProvider({ children }) {
     }
 
     const loginWithGoogle = () => {
+        setLoading(true)
         return signInWithPopup(auth, googleProvider)
     }
 
