@@ -15,6 +15,7 @@ import AllArtCraft from './pages/AllArtCraft/AllArtCraft.jsx';
 import AddArtCraft from './pages/AllArtCraft/AddArtCraft.jsx';
 import MyListArtCraft from './pages/AllArtCraft/MyListArtCraft.jsx'
 import ViewDetails from './pages/AllArtCraft/ViewDetails.jsx';
+import UpdateArtCraft from './pages/AllArtCraft/UpdateArtCraft.jsx';
 
 const router = createBrowserRouter([
   {
@@ -44,6 +45,12 @@ const router = createBrowserRouter([
         path:'/myartcraft/:email',
         element:<MyListArtCraft></MyListArtCraft>,
         loader:({params})=>fetch(`http://localhost:5000/myartcraft/${params.email}`)
+
+      },
+      {
+        path:'/myartcraft/:id',
+        element:<UpdateArtCraft></UpdateArtCraft>,
+        loader:({params})=>fetch(`http://localhost:5000/artcraft/${params.id}`)
 
       },
       {

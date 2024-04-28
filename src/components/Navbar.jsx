@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import auth from "../firebase/firebase.init";
 
@@ -85,7 +85,7 @@ export default function Navbar() {
           <svg className="col-start-2 row-start-1 stroke-base-100 fill-base-100" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
         </label>
         {user &&
-          <NavLink to='/profile' style={{ backgroundColor: "#fff" }} className="avatar  placeholder ml-4 relative ">
+          <div style={{ backgroundColor: "#fff" }} className="avatar  placeholder ml-4 relative ">
             <div className="bg-neutral text-neutral-content rounded-full w-12 opacity-80 ">
               {
                 url ? <img src={url} alt="" /> : <span className="text-xl">{name}</span>
@@ -95,7 +95,7 @@ export default function Navbar() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-3 w-3 bg-sky-500"></span>
             </span>
-          </NavLink>
+          </div>
         }
         {user ? <a onClick={signout} className="btn mx-4 bg-neutral-content opacity-90">Signout</a> : <Link to='/login' className="btn">Signin</Link>}
       </div>
