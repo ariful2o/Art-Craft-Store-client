@@ -2,10 +2,13 @@
 import { useLoaderData } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import Swal from "sweetalert2";
 
 export default function UpdateArtCraft() {
   const updateArtCraft = useLoaderData()
-  const { name, image, email, item_name, subcategory_Name, processing_time, description, price, rating, stock, customization } = updateArtCraft
+  const { name, image, email, item_name, subcategory_Name, processing_time, description, price, rating, stock, customization } = updateArtCraft;
+
+
   const handleUpdateArtCraft = (e) => {
     e.preventDefault()
 
@@ -22,19 +25,37 @@ export default function UpdateArtCraft() {
     const stock = form.get('stock')
     const customization = form.get('customization')
     const updateArtcraft = { name, image, email, item_name, subcategory_Name, processing_time, description, price, rating, stock, customization }
-    fetch(``, {
-      method: "PUT",
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(updateArtcraft)
-    })
-    .then(res=>res.json())
-    .then(data=>{
-      console.log(data)
-    })
+
+    Swal.fire({
+      title: "Do you want to save the changes?",
+      showDenyButton: true,
+      showCancelButton: true,
+      confirmButtonText: "Save",
+      denyButtonText: `Don't save`
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        fetch(``, {
+          method: "PUT",
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(updateArtcraft)
+        })
+          .then(res => res.json())
+          .then(data => {
+            console.log(data)
+            data.acknowledged && Swal.fire("Saved!", "", "success");
+          })
+      } else if (result.isDenied) {
+        Swal.fire("Changes are not saved", "", "info");
+      }
+    });
+
 
   }
+
+
 
   return (
     <div className="min-h-svh flex items-center bg-base-200"><ToastContainer />
