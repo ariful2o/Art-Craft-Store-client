@@ -37,7 +37,6 @@ export default function Register() {
     const password = form.get('password')
     const confirmpassword = form.get('confirmpassword')
     const checked = e.target.checked.checked;
-    console.log(name, photo, email, password, confirmpassword, checked)
 
     // setName(name);
     // setPhotoURL(photo);
