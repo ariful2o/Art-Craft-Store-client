@@ -6,7 +6,7 @@ import auth from "../firebase/firebase.init";
 export const AuthContext = createContext(null)
 
 export default function AuthProvider({ children }) {
-    
+
     const [loading, setLoading] = useState(true)
     const [user, setUser] = useState(null)
     const googleProvider = new GoogleAuthProvider()
@@ -55,7 +55,7 @@ export default function AuthProvider({ children }) {
     }, [user])
 
 
-    const authValue = {//auth informations
+    const authValue = {     //auth informations
         user,
         registerUser,
         loginUser,

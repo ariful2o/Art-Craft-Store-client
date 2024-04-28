@@ -34,15 +34,17 @@ const router = createBrowserRouter([
       {
         path:'/allartcraft/:id',
         element:<ViewDetails></ViewDetails>,
-        loader:({params})=>fetch(`http://localhost:5000/artcrafts/${params.id}`)
+        loader:({params})=>fetch(`http://localhost:5000/artcraft/${params.id}`)
       },
       {
         path:'/addartcraft',
         element:<AddArtCraft></AddArtCraft>,
       },
       {
-        path:'/myartcraft',
-        element:<MyListArtCraft></MyListArtCraft>
+        path:'/myartcraft/:email',
+        element:<MyListArtCraft></MyListArtCraft>,
+        loader:({params})=>fetch(`http://localhost:5000/myartcraft/${params.email}`)
+
       },
       {
         path:'/login',

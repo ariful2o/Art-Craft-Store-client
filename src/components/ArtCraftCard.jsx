@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom"
+import { PropTypes } from "prop-types";
 
 
 export default function ArtCraftCard({ artCraft }) {
     const { item_name, image, price, rating, _id, stock } = artCraft
-    console.log(artCraft)
     return (
         <div className="card w-96 bg-base-100 shadow-xl">
             <figure><img src={image} alt={item_name} /></figure>
@@ -23,3 +23,6 @@ export default function ArtCraftCard({ artCraft }) {
         </div>
     )
 }
+ArtCraftCard.propTypes = {
+    artCraft: PropTypes.object.isRequired,
+};

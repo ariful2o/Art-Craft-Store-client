@@ -3,9 +3,9 @@ import ArtCraftCard from "../../components/ArtCraftCard"
 
 
 export default function AllArtCraft() {
-  const loadedArtCrafts=useLoaderData()
+  const loadedArtCrafts = useLoaderData()
   return (
-    <div>
+    <div className="grid grid-cols-1 md:grid-cols-3">
       {
         loadedArtCrafts.map((artCraft) => {
           return (

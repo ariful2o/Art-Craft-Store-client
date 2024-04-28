@@ -1,7 +1,11 @@
 import { toast, ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import auth from "../../firebase/firebase.init";
 
 export default function AddArtCraft() {
+  const user = auth.currentUser;
+
+
   const handleAddArtCraft = (e) => {
     e.preventDefault()
 
@@ -17,19 +21,19 @@ export default function AddArtCraft() {
     const rating = form.get('rating')
     const stock = form.get('stock')
     const customization = form.get('customization')
-    const artCraftData={ name, image, email, item_name, subcategory_Name, processing_time, description, price, rating, stock, customization }
+    const artCraftData = { name, image, email, item_name, subcategory_Name, processing_time, description, price, rating, stock, customization }
 
-    fetch('http://localhost:5000/addartcraft',{
+    fetch('http://localhost:5000/addartcraft', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(artCraftData)
     })
-    .then(res=>res.json())
-    .then(data=>{
-      data.acknowledged && toast.success('Add Art Craft Success')
-    })
+      .then(res => res.json())
+      .then(data => {
+        data.acknowledged && toast.success('Add Art Craft Success')
+      })
 
   }
 
@@ -114,13 +118,13 @@ export default function AddArtCraft() {
                 <label className="label">
                   <span className="label-text">User Name</span>
                 </label>
-                <input name="name" type="text" placeholder="Name" className="input w-full input-bordered" required />
+                <input name="name" type="text" defaultValue={user && user.displayName} placeholder="Name" className="input w-full input-bordered" required />
               </div>
               <div className="w-full">
                 <label className="label">
                   <span className="label-text">User Email</span>
                 </label>
-                <input name="email" type="email" placeholder="Email" className="input w-full input-bordered" required />
+                <input name="email" type="email" defaultValue={user && user.email} placeholder="Email" className="input w-full input-bordered" required />
               </div>
             </div>
           </div>

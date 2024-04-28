@@ -8,6 +8,8 @@ export default function Navbar() {
   const [theme, setTheme] = useState('light');
   const [name, setName] = useState('')
   const [url, setUrl] = useState('')
+  const currentUser = auth.currentUser?.email;
+
 
   const handleThemes = (e) => {
     if (e.target.checked) {
@@ -21,7 +23,7 @@ export default function Navbar() {
   const navlinks = <>
     <Link to='/'>Home</Link>
     <Link to='/allartcraft'>All Art & craft</Link>
-    <Link to='/myartcraft'>My Art & Craft</Link>
+    <Link to={`/myartcraft/${currentUser}`}>My Art & Craft</Link>
     <Link to='/addartcraft'>Add Art & Craft</Link>
     <Link to='/login'>Login</Link>
     <Link to='/register'>Register</Link>

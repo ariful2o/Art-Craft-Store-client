@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import auth from "../firebase/firebase.init";
-import { sendEmailVerification } from "firebase/auth";
+import { sendEmailVerification, updateProfile } from "firebase/auth";
 import { toast, ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
@@ -63,6 +63,15 @@ export default function Register() {
       .then(() => {
         // const usr = result.user
         toast.success("Register Successfull")
+        // import { getAuth, updateProfile } from "firebase/auth";
+        updateProfile(auth.currentUser, {
+          displayName: name, photoURL: photo
+        }).then(() => {
+          // Profile updated!
+          // ...
+        }).catch((error) => {
+          console.log(error)
+        });
         e.target.reset()
         //update data
         sendEmailVerification(auth.currentUser)
