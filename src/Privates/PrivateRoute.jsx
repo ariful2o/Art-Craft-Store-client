@@ -10,7 +10,7 @@ export default function PrivateRoute({ children }) {
     const location = useLocation()
 
     if (loading) {
-        return <span className="loading loading-spinner text-error"></span>
+        return <div className="justify-center flex my-20"><span className="loading loading-spinner text-error"></span></div>
     }
     if (user) {
         return children;

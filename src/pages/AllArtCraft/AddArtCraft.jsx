@@ -32,7 +32,7 @@ export default function AddArtCraft() {
     })
       .then(res => res.json())
       .then(data => {
-        !data ? <div className="justify-center flex"><span className="loading loading-spinner loading-lg"></span></div> :data.acknowledged && toast.success('Add Art Craft Success'),form.reset()
+        data.acknowledged && toast.success('Add Art Craft Success'),form.reset()
       })
 
   }

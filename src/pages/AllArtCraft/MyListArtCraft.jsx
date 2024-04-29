@@ -35,7 +35,7 @@ export default function MyListArtCraft() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3  my-10 gap-8">
       {
-        !myArtCraft ? <div className="justify-center flex"><span className="loading loading-spinner loading-lg"></span></div> : myArtCraft.map(item => {
+        !myArtCraft ? <div className="justify-center flex my-20"><span className="loading loading-spinner loading-lg"></span></div> : myArtCraft.map(item => {
           return (
             <div key={item._id} className="card w-96 bg-base-100 shadow-xl mx-auto">
               <figure><img className="w-full h-72 p-3" src={item.image} alt={item.item_name} /></figure>
