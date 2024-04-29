@@ -16,6 +16,7 @@ import AddArtCraft from './pages/AllArtCraft/AddArtCraft.jsx';
 import MyListArtCraft from './pages/AllArtCraft/MyListArtCraft.jsx'
 import ViewDetails from './pages/AllArtCraft/ViewDetails.jsx';
 import UpdateArtCraft from './pages/AllArtCraft/UpdateArtCraft.jsx';
+import PrivateRoute from './Privates/PrivateRoute.jsx';
 
 const router = createBrowserRouter([
   {
@@ -34,22 +35,22 @@ const router = createBrowserRouter([
       },
       {
         path:'/allartcraft/:id',
-        element:<ViewDetails></ViewDetails>,
+        element:<PrivateRoute><ViewDetails></ViewDetails></PrivateRoute>,
         loader:({params})=>fetch(`http://localhost:5000/artcraft/${params.id}`)
       },
       {
         path:'/addartcraft',
-        element:<AddArtCraft></AddArtCraft>,
+        element:<PrivateRoute><AddArtCraft></AddArtCraft></PrivateRoute>,
       },
       {
         path:'/myartcraft/:email',
-        element:<MyListArtCraft></MyListArtCraft>,
+        element:<PrivateRoute><MyListArtCraft></MyListArtCraft></PrivateRoute>,
         loader:({params})=>fetch(`http://localhost:5000/myartcraft/${params.email}`)
 
       },
       {
-        path:'/myartcraft/:id',
-        element:<UpdateArtCraft></UpdateArtCraft>,
+        path:'/updateartcraft/:id',
+        element:<PrivateRoute><UpdateArtCraft></UpdateArtCraft></PrivateRoute>,
         loader:({params})=>fetch(`http://localhost:5000/artcraft/${params.id}`)
 
       },

@@ -1,14 +1,13 @@
 
-import { useLoaderData } from "react-router-dom";
-import { toast, ToastContainer } from "react-toastify";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import 'react-toastify/dist/ReactToastify.css';
 import Swal from "sweetalert2";
 
 export default function UpdateArtCraft() {
   const updateArtCraft = useLoaderData()
-  const { name, image, email, item_name, subcategory_Name, processing_time, description, price, rating, stock, customization } = updateArtCraft;
-
-
+  const { name, image, email, item_name, subcategory_Name, processing_time, description, price, rating,_id } = updateArtCraft;
+  const navigate=useNavigate()
+  
   const handleUpdateArtCraft = (e) => {
     e.preventDefault()
 
@@ -35,18 +34,18 @@ export default function UpdateArtCraft() {
     }).then((result) => {
       /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
-        fetch(``, {
-          method: "PUT",
+        fetch(`http://localhost:5000/updateartcraft/${_id}`, {
+          method: 'PUT',
           headers: {
             'Content-Type': 'application/json'
           },
           body: JSON.stringify(updateArtcraft)
         })
-          .then(res => res.json())
-          .then(data => {
-            console.log(data)
-            data.acknowledged && Swal.fire("Saved!", "", "success");
-          })
+        .then(res => res.json())
+        .then(data => {
+          data.acknowledged && Swal.fire("Saved!", "", "success"), navigate(`/myartcraft/${email}`)
+          
+        })
       } else if (result.isDenied) {
         Swal.fire("Changes are not saved", "", "info");
       }
@@ -58,9 +57,9 @@ export default function UpdateArtCraft() {
 
 
   return (
-    <div className="min-h-svh flex items-center bg-base-200"><ToastContainer />
+    <div className="min-h-svh flex items-center bg-base-200">
       <div className="card shrink-0 w-full max-w-4xl mx-auto shadow-2xl bg-base-100">
-        <h2 className="text-center font-black text-4xl my-4">Add Craft Item</h2>
+        <h2 className="text-center font-black text-4xl my-4">Update Art & Craft Item</h2>
         <form className="card-body" onSubmit={handleUpdateArtCraft}>
           <div className="form-control">
             <div className="flex flex-col md:flex-row gap-4 md:gap-8">
@@ -119,8 +118,8 @@ export default function UpdateArtCraft() {
                   <span className="label-text">Customization</span>
                 </label>
                 <div className="input-bordered input items-center flex gap-1">
-                  <input type="radio" name="customization" defaultValue={customization} value={"Yes"} id="" /> Yes
-                  <input type="radio" name="customization" defaultValue={customization} value={"No"} id="" className="ml-14" /> No
+                  <input type="radio" name="customization"  value={"Yes"} id="" /> Yes
+                  <input type="radio" name="customization"  value={"No"} id="" className="ml-14" /> No
                 </div>
               </div>
               <div className="w-full">
@@ -128,8 +127,8 @@ export default function UpdateArtCraft() {
                   <span className="label-text">Stock Status</span>
                 </label>
                 <div className="input-bordered input items-center flex gap-1">
-                  <input type="radio" name="stock" defaultValue={stock} id="" value={"In stock"} /> In stock
-                  <input type="radio" name="stock" defaultValue={stock} id="" value={"Made to Order"} className="ml-5 md:ml-14  " /> Made to Order
+                  <input type="radio" name="stock"  id="" value={"In stock"} /> In stock
+                  <input type="radio" name="stock"  id="" value={"Made to Order"} className="ml-5 md:ml-14  " /> Made to Order
                 </div>
               </div>
             </div>

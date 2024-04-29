@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { Link, useLoaderData } from "react-router-dom"
+import { Link, useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
 export default function MyListArtCraft() {
   const myArtCraftLoaded = useLoaderData()
-  const [myArtCraft,setMyArtCraft]=useState(myArtCraftLoaded)
+  const [myArtCraft, setMyArtCraft] = useState(myArtCraftLoaded)
   const handleDelete = (id) => {
     Swal.fire({
       title: "Are you sure?",
@@ -24,7 +24,7 @@ export default function MyListArtCraft() {
               text: "Your file has been deleted.",
               icon: "success"
             });
-            const remaing=myArtCraft.filter(item=>item._id!==id)
+            const remaing = myArtCraft.filter(item => item._id !== id)
             setMyArtCraft(remaing)
           })
       }
@@ -33,12 +33,12 @@ export default function MyListArtCraft() {
 
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-10 my-10">
+    <div className="grid grid-cols-1 md:grid-cols-3  my-10 gap-8">
       {
         myArtCraft.map(item => {
           return (
             <div key={item._id} className="card w-96 bg-base-100 shadow-xl mx-auto">
-              <figure><img src={item.image} alt={item.item_name} /></figure>
+              <figure><img className="w-full h-72 p-3" src={item.image} alt={item.item_name} /></figure>
               <div className="card-body">
                 <h2 className="card-title">
                   {item.item_name}
@@ -47,9 +47,11 @@ export default function MyListArtCraft() {
                 <p>Rating : {item.rating}</p>
                 <p>Customization : {item.customization}</p>
                 <p>Stock Status : {item.stock}</p>
-                <div className="card-actions justify-end">
-                  <Link to={``} className="badge badge-outline">Update</Link>
-                  <button onClick={() => handleDelete(item._id)} className="badge badge-outline">Delete</button>
+                <div className="card-actions justify-end items-center gap-4">
+                  <Link to={`/updateartcraft/${item._id}`}>
+                    <div className="badge badge-primary badge-outline">Update</div>
+                  </Link>
+                  <button onClick={() => handleDelete(item._id)} className="badge badge-secondary badge-outline">Delete</button>
                 </div>
               </div>
             </div>

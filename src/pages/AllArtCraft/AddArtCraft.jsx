@@ -32,8 +32,7 @@ export default function AddArtCraft() {
     })
       .then(res => res.json())
       .then(data => {
-        data.acknowledged && toast.success('Add Art Craft Success')
-        form.reset()
+        data.acknowledged && toast.success('Add Art Craft Success'),form.reset()
       })
 
   }

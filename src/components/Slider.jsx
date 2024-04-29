@@ -24,44 +24,44 @@ export default function Slider() {
 
             <div className="container container-lg">
                 <div className="slide">
-                    <div className="item" style={{ backgroundImage: "url(https://i.ibb.co/qCkd9jS/img1.jpg)" }}>
+                    <div className="item" style={{ backgroundImage: "url(https://capricathemes.com/opencart/OPC02/OPC020033/image/catalog/cms-banner.jpg)" }}>
                         <div className="content">
-                            <div className="name">Switzerland</div>
+                            <div className="name">Ceramic Art</div>
                             <div className="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!</div>
                             <button>See More</button>
                         </div>
                     </div>
-                    <div className="item" style={{ backgroundImage: "url(https://i.ibb.co/jrRb11q/img2.jpg)" }}>
+                    <div className="item" style={{ backgroundImage: "url(https://capricathemes.com/opencart/OPC02/OPC020033/image/cache/catalog/main-banner-1-1903x975.jpg)" }}>
                         <div className="content">
-                            <div className="name">Finland</div>
+                            <div className="name">Handmade Ceramics</div>
                             <div className="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!</div>
                             <button>See More</button>
                         </div>
                     </div>
-                    <div className="item" style={{ backgroundImage: "url(https://i.ibb.co/NSwVv8D/img3.jpg)" }}>
+                    <div className="item" style={{ backgroundImage: "url(https://capricathemes.com/opencart/OPC02/OPC020033/image/cache/catalog/main-banner-2-1903x975.jpg)" }}>
                         <div className="content">
-                            <div className="name">Iceland</div>
+                            <div className="name">Wooden Crafts</div>
                             <div className="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!</div>
                             <button>See More</button>
                         </div>
                     </div>
-                    <div className="item" style={{ backgroundImage: "url(https://i.ibb.co/Bq4Q0M8/img4.jpg)" }}>
+                    <div className="item" style={{ backgroundImage: "url(https://capricathemes.com/opencart/OPC02/OPC020033/image/cache/catalog/blog-5-893x752.jpg)" }}>
                         <div className="content">
-                            <div className="name">Australia</div>
+                            <div className="name">Handmade Ceramics</div>
                             <div className="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!</div>
                             <button>See More</button>
                         </div>
                     </div>
-                    <div className="item" style={{ backgroundImage: "url(https://i.ibb.co/jTQfmTq/img5.jpg)" }}>
+                    <div className="item" style={{ backgroundImage: "url(http://artcrafts.wpengine.com/wp-content/uploads/2017/07/12.jpg)" }}>
                         <div className="content">
-                            <div className="name">Netherland</div>
+                            <div className="name">Reprehander Pariatur</div>
                             <div className="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!</div>
                             <button>See More</button>
                         </div>
                     </div>
-                    <div className="item" style={{ backgroundImage: "url(https://i.ibb.co/RNkk6L0/img6.jpg)" }}>
+                    <div className="item" style={{ backgroundImage: "url(https://bw-craftxtore.bzotech.com/wp-content/uploads/2023/07/blog-post-2.webp)" }}>
                         <div className="content">
-                            <div className="name">Ireland</div>
+                            <div className="name">Japanese ceramic</div>
                             <div className="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!</div>
                             <button>See More</button>
                         </div>
@@ -77,7 +77,7 @@ export default function Slider() {
             <div className="container-mobile">
                 <div className="carousel w-full min-h-40">
                     <div id="slide1" className="carousel-item relative w-full">
-                        <img src="https://daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.jpg" className="w-full" />
+                        <img src="https://capricathemes.com/opencart/OPC02/OPC020033/image/catalog/cms-banner.jpg" className="w-full" />
                         <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                             <a href="#slide4" className="btn btn-circle">❮</a>
                             <a href="#slide2" className="btn btn-circle">❯</a>
