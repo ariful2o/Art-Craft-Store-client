@@ -25,8 +25,10 @@ export default function Navbar() {
     <Link to='/allartcraft'>All Art & craft</Link>
     <Link to={`/myartcraft/${currentUser}`}>My Art & Craft</Link>
     <Link to='/addartcraft'>Add Art & Craft</Link>
-    <Link to='/login'>Login</Link>
-    <Link to='/register'>Register</Link>
+    <Link to='/blogs'>Blogs</Link>
+    {
+      !user && <><Link to='/login'>Login</Link><Link to='/register'>Register</Link></>
+    }
   </>
 
   //theme change

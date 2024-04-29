@@ -17,6 +17,7 @@ import MyListArtCraft from './pages/AllArtCraft/MyListArtCraft.jsx'
 import ViewDetails from './pages/AllArtCraft/ViewDetails.jsx';
 import UpdateArtCraft from './pages/AllArtCraft/UpdateArtCraft.jsx';
 import PrivateRoute from './Privates/PrivateRoute.jsx';
+import Blogs from './pages/Blogs.jsx';
 
 const router = createBrowserRouter([
   {
@@ -53,6 +54,11 @@ const router = createBrowserRouter([
         element:<PrivateRoute><UpdateArtCraft></UpdateArtCraft></PrivateRoute>,
         loader:({params})=>fetch(`http://localhost:5000/artcraft/${params.id}`)
 
+      },
+      {
+        path:'/blogs',
+        element:<Blogs></Blogs>,
+        loader:()=>fetch('http://localhost:5000/blogs')
       },
       {
         path:'/login',

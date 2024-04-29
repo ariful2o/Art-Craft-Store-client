@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import AboutUs from "../../components/AboutUs";
 import ArtCraftCard from "../../components/ArtCraftCard";
 import Slider from "../../components/Slider";
+import Blogs from "../Blogs";
 
 export default function Home() {
   const [artCraft, setArtCraft] = useState()
@@ -28,6 +29,7 @@ export default function Home() {
           }
         </div>
           <Link to='/allartcraft'><button className="border border-gray-400 px-4 py-2 my-6 mx-auto block rounded">Show All</button></Link>
+          <Blogs></Blogs>
         <AboutUs></AboutUs>
       </div>
     </>
