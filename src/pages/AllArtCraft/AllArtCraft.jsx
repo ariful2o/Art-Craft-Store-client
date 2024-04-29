@@ -7,7 +7,7 @@ export default function AllArtCraft() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 my-20 gap-10">
       {
-        loadedArtCrafts.map((artCraft) => {
+        !loadedArtCrafts ? <div className="justify-center flex"><span className="loading loading-spinner loading-lg"></span></div> : loadedArtCrafts.map((artCraft) => {
           return (
             <ArtCraftCard key={artCraft._id} artCraft={artCraft}></ArtCraftCard>
           )

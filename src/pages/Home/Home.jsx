@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
-import Slider from "../../components/Slider";
-import { Link } from "react-router-dom";
-import ArtCraftCard from "../../components/ArtCraftCard";
 import AboutUs from "../../components/AboutUs";
+import ArtCraftCard from "../../components/ArtCraftCard";
+import Slider from "../../components/Slider";
 
 export default function Home() {
   const [artCraft, setArtCraft] = useState()
@@ -21,15 +20,15 @@ export default function Home() {
         <h2 className="text-center text-3xl text-[#70D2C0] my-10">Our Products</h2>
         <div className="">
           {
-          artCraft.map((artCraft) => {
-            return (
-              <ArtCraftCard key={artCraft._id} artCraft={artCraft}></ArtCraftCard>
-            )
-          })
+            !artCraft ? <div className="justify-center flex"><span className="loading loading-spinner loading-lg"></span></div> : artCraft?.map((artCraft) => {
+              return (
+                <ArtCraftCard key={artCraft._id} artCraft={artCraft}></ArtCraftCard>
+              )
+            })
           }
         </div>
         <AboutUs></AboutUs>
-      </div>
+      </div> 
     </>
   )
 }

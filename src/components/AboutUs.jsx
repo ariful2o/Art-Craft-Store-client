@@ -4,7 +4,7 @@ export default function AboutUs() {
     return (<>
         <h2 className=" text-3xl text-center my-10 text-[#70D2C0]">About Us</h2>
         <div className="flex flex-col md:flex-row">
-            <img src={`https://bw-craftxtore.bzotech.com/demo5/wp-content/uploads/2023/11/banner2-home5.webp`} alt="" />
+            <img className="w-full md:w-1/2" src={`https://bw-craftxtore.bzotech.com/demo5/wp-content/uploads/2023/11/banner2-home5.webp`} alt="" />
             <div className="p-8">
                 <h2 className=" text-3xl text-[#70D2C0] my-8">Everyone&apos;s dream gadget</h2>
                 <p>We are passionate about doing our part to make life better. We offer high quality merchandise, great value and exceptional customer service. We connect people to products and services in new and unexpected ways. We contribute to creating dream products for everyone.

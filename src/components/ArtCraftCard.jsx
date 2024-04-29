@@ -5,7 +5,7 @@ import { PropTypes } from "prop-types";
 export default function ArtCraftCard({ artCraft }) {
     const { item_name, image, price, rating, _id, stock } = artCraft
     return (
-        <div className="card w-96 bg-base-100 shadow-xl mx-auto">
+        <div className="card w-full md:w-96 bg-base-100 shadow-xl mx-auto">
             <figure><img className="w-full h-56 p-2" src={image} alt={item_name} /></figure>
             <div className="card-body">
                 <h2 className="card-title">
