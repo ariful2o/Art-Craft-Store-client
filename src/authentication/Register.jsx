@@ -1,16 +1,16 @@
-import { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { AuthContext } from "../provider/AuthProvider";
-import auth from "../firebase/firebase.init";
 import { sendEmailVerification, updateProfile } from "firebase/auth";
-import { toast, ToastContainer } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import { useContext, useState } from "react";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
+import { Link, useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+import auth from "../firebase/firebase.init";
+import { AuthContext } from "../provider/AuthProvider";
 
 
 export default function Register() {
 
-  const { registerUser, user } = useContext(AuthContext)
+  const { registerUser } = useContext(AuthContext)
   const [errorpassword, setErrorPassword] = useState(null)
   const [checkbox, setCheckboox] = useState(null)
   const [weekPassword, setWeekPassword] = useState(null)

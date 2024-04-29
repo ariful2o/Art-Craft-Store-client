@@ -1,10 +1,10 @@
 import { useContext, useState } from "react";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
-import { Link } from "react-router-dom";
-import { AuthContext } from "../provider/AuthProvider";
-import { toast, ToastContainer } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
 import { FaGithub, FaGoogle } from "react-icons/fa6";
+import { Link } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+import { AuthContext } from "../provider/AuthProvider";
 
 
 

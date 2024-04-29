@@ -1,6 +1,6 @@
+import { useState } from "react"
 import { FaStar } from "react-icons/fa6"
 import { useLoaderData } from "react-router-dom"
-import { useState } from "react"
 
 export default function ViewDetails() {
   const details = useLoaderData()
@@ -8,6 +8,7 @@ export default function ViewDetails() {
   const [count, setCount] = useState(1)
   return (
     <div className="card grid grid-cols-2 gap-4">
+     
       <figure className="w-gull"><img className="min-h-full py-10 p-4 w-full" src={image} alt="Album" /></figure>
       <div className="card-body">
         <div className="flex justify-between">

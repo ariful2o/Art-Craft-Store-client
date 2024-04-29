@@ -32,13 +32,14 @@ export default function AddArtCraft() {
     })
       .then(res => res.json())
       .then(data => {
-        data.acknowledged && toast.success('Add Art Craft Success'),form.reset()
+        data.acknowledged && toast.success('Add Art Craft Success')
       })
-
+      
   }
 
   return (
     <div className="min-h-svh flex items-center bg-base-200"><ToastContainer />
+
       <div className="card shrink-0 w-full max-w-4xl mx-auto shadow-2xl bg-base-100">
         <h2 className="text-center font-black text-4xl my-4">Add Craft Item</h2>
         <form className="card-body" onSubmit={handleAddArtCraft}>

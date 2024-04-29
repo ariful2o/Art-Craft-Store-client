@@ -58,6 +58,7 @@ export default function UpdateArtCraft() {
 
   return (
     <div className="min-h-svh flex items-center bg-base-200">
+      
       <div className="card shrink-0 w-full max-w-4xl mx-auto shadow-2xl bg-base-100">
         <h2 className="text-center font-black text-4xl my-4">Update Art & Craft Item</h2>
         <form className="card-body" onSubmit={handleUpdateArtCraft}>

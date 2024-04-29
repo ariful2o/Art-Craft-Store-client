@@ -67,7 +67,7 @@ export default function Navbar() {
         </div>
         <div className="relative hidden lg:flex">
           <div className="flex flex-row">
-            <img className="w-10 h-10" src="https://lighthouse.ancorathemes.com/wp-content/uploads/2017/06/lighthouse.png" alt="" />
+            <img className="w-10 h-10" src="https://www.logohouse.org/images/Art%20and%20Craft%20logo%20design%202.png" alt="" />
             <a className="btn btn-ghost text-xl font-sotify">Art & Craft Store</a>
           </div>
 
