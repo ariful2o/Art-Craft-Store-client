@@ -1,6 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import Blog from "../components/Blog";
 import auth from "../firebase/firebase.init";
+import { toast, ToastContainer } from "react-toastify";
 
 
 export default function Blogs() {
@@ -25,15 +26,17 @@ export default function Blogs() {
         })
             .then(res => res.json())
             .then(data => {
+                data.acknowledged && toast.success('Blog Post Success')
                 console.log(data)
             })
     }
 
     return (<>
         <h2 className="text-center text-3xl text-[#70D2C0] my-10">Latest News & Events</h2>
+        <ToastContainer />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 my-10">
             {
-                blogs.map(blog => <Blog key={blog._id} blog={blog}></Blog>)
+                !blogs ? <div className="justify-center flex my-20"><span className="loading loading-spinner loading-lg"></span></div> : blogs.map(blog => <Blog key={blog._id} blog={blog}></Blog>)
             }
         </div>
         {/* Open the modal using document.getElementById('ID').showModal() method */}

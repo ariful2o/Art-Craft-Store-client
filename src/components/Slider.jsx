@@ -84,21 +84,35 @@ export default function Slider() {
                         </div>
                     </div>
                     <div id="slide2" className="carousel-item relative w-full">
-                        <img src="https://daisyui.com/images/stock/photo-1609621838510-5ad474b7d25d.jpg" className="w-full" />
+                        <img src="https://capricathemes.com/opencart/OPC02/OPC020033/image/cache/catalog/main-banner-1-1903x975.jpg" className="w-full" />
                         <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                             <a href="#slide1" className="btn btn-circle">❮</a>
                             <a href="#slide3" className="btn btn-circle">❯</a>
                         </div>
                     </div>
                     <div id="slide3" className="carousel-item relative w-full">
-                        <img src="https://daisyui.com/images/stock/photo-1414694762283-acccc27bca85.jpg" className="w-full" />
+                        <img src="https://capricathemes.com/opencart/OPC02/OPC020033/image/cache/catalog/main-banner-2-1903x975.jpg" className="w-full" />
                         <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                             <a href="#slide2" className="btn btn-circle">❮</a>
                             <a href="#slide4" className="btn btn-circle">❯</a>
                         </div>
                     </div>
                     <div id="slide4" className="carousel-item relative w-full">
-                        <img src="https://daisyui.com/images/stock/photo-1665553365602-b2fb8e5d1707.jpg" className="w-full" />
+                        <img src="https://capricathemes.com/opencart/OPC02/OPC020033/image/cache/catalog/blog-5-893x752.jpg" className="w-full" />
+                        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                            <a href="#slide3" className="btn btn-circle">❮</a>
+                            <a href="#slide1" className="btn btn-circle">❯</a>
+                        </div>
+                    </div>
+                    <div id="slide4" className="carousel-item relative w-full">
+                        <img src="https://bw-craftxtore.bzotech.com/wp-content/uploads/2023/07/blog-post-2.webp" className="w-full" />
+                        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                            <a href="#slide3" className="btn btn-circle">❮</a>
+                            <a href="#slide1" className="btn btn-circle">❯</a>
+                        </div>
+                    </div>
+                    <div id="slide4" className="carousel-item relative w-full">
+                        <img src="https://bw-craftxtore.bzotech.com/wp-content/uploads/2023/07/blog-post-2.webp" className="w-full" />
                         <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                             <a href="#slide3" className="btn btn-circle">❮</a>
                             <a href="#slide1" className="btn btn-circle">❯</a>
