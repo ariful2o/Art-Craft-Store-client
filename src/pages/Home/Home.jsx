@@ -2,9 +2,8 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import AboutUs from "../../components/AboutUs";
 import ArtCraftCard from "../../components/ArtCraftCard";
-import Slider from "../../components/Slider";
-import Blogs from "../Blogs";
 import Blog from "../../components/Blog";
+import Slider from "../../components/Slider";
 
 export default function Home() {
   const [artCraft, setArtCraft] = useState()

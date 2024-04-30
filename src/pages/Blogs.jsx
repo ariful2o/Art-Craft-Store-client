@@ -1,15 +1,22 @@
-import { useLoaderData } from "react-router-dom";
+import { Navigate, useLoaderData } from "react-router-dom";
 import Blog from "../components/Blog";
 import auth from "../firebase/firebase.init";
 import { toast, ToastContainer } from "react-toastify";
+import { useContext } from "react";
+import { AuthContext } from "../provider/AuthProvider";
 
 
 export default function Blogs() {
     const blogs = useLoaderData()
+    const {user}=useContext(AuthContext)
     console.log(blogs)
 
     const handleBlogPost = (e) => {
         e.preventDefault()
+        if (!user) {
+            <Navigate state={location?.pathname} to="/login"></Navigate>
+            return
+        }
         const date = auth.currentUser?.metadata?.lastSignInTime
         const form = new FormData(e.currentTarget)
         const title = form.get('title')
