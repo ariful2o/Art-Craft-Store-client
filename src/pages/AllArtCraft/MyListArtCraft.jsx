@@ -9,7 +9,7 @@ const options = [
 ];
 
 export default function MyListArtCraft() {
-  const [selectedOption, setSelectedOption] = useState(null); 
+  const [selectedOption, setSelectedOption] = useState(null);
 
   const myArtCraftLoaded = useLoaderData()
   const [myArtCraft, setMyArtCraft] = useState(myArtCraftLoaded)
@@ -40,8 +40,8 @@ export default function MyListArtCraft() {
   }
   // Function to handle change in the selected option
   const handleOptionChange = (selectedOption) => {
-    setSelectedOption(selectedOption); // Update the state with the selected option
-    const filter=myArtCraftLoaded.filter(item=>item.customization.toLowerCase()===selectedOption.value.toLowerCase())
+    setSelectedOption(selectedOption); // Update the state 
+    const filter = myArtCraftLoaded.filter(item => item.customization.toLowerCase() === selectedOption.value.toLowerCase())
     setMyArtCraft(filter)
   };
 
@@ -50,14 +50,14 @@ export default function MyListArtCraft() {
     <>
       <h2 className="text-4xl text-center font-bold my-10 text-[#70D2C0]">My Art & Craft : {myArtCraft.length}</h2>
       <div className="flex items-center font-bold p-9">
-      Filter By Customization:
-      <Select
-        className="min-w-60 pl-2 font-normal"
-        value={selectedOption} // Set the value prop to selectedOption
-        onChange={handleOptionChange} // Call handleOptionChange when the option changes
-        options={options}
-      />
-    </div>
+        Filter By Customization:
+        <Select
+          className="min-w-60 pl-2 font-normal"
+          value={selectedOption} // Set the value prop to selectedOption
+          onChange={handleOptionChange}
+          options={options}
+        />
+      </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3  my-10 gap-8">
         {!myArtCraft ? <div className="justify-center flex my-20"><span className="loading loading-spinner loading-lg"></span></div> : myArtCraft.map(item => {
