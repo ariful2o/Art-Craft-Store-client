@@ -34,7 +34,7 @@ export default function UpdateArtCraft() {
     }).then((result) => {
       /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/updateartcraft/${_id}`, {
+        fetch(`https://art-craft-store-server-three.vercel.app/updateartcraft/${_id}`, {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json'

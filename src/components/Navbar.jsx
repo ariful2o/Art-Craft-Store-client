@@ -1,7 +1,9 @@
 import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../provider/AuthProvider";
+import { Tooltip } from 'react-tooltip';
+import 'react-tooltip/dist/react-tooltip.css';
 import auth from "../firebase/firebase.init";
+import { AuthContext } from "../provider/AuthProvider";
 
 export default function Navbar() {
   const { user, signout } = useContext(AuthContext);
@@ -40,6 +42,7 @@ export default function Navbar() {
   useEffect(() => {
     const userr = auth.currentUser;
     if (userr !== null) {
+      setName(userr.displayName)
       user.providerData.forEach((profile) => {
 
         if (profile.displayName) {
@@ -81,6 +84,9 @@ export default function Navbar() {
         </ul>
       </div>
       <div className="navbar-end">
+        <Tooltip anchorSelect="#profileImage" place="bottom">
+          {name}
+        </Tooltip>
         <label className="cursor-pointer grid place-items-center mx-2">
           <input onChange={handleThemes} name="theme" type="checkbox" value="synthwave" className="toggle theme-controller bg-base-content row-start-1 col-start-1 col-span-2" />
           <svg className="col-start-1 row-start-1 stroke-base-100 fill-base-100" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="5" /><path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4" /></svg>
@@ -88,7 +94,7 @@ export default function Navbar() {
         </label>
         {user &&
           <div style={{ backgroundColor: "#fff" }} className="avatar  placeholder ml-4 relative ">
-            <div className="bg-neutral text-neutral-content rounded-full w-12 opacity-80 ">
+            <div id="profileImage" className="bg-neutral text-neutral-content rounded-full w-12 opacity-80 ">
               {
                 url ? <img src={url} alt="" /> : <span className="text-xl">{name}</span>
               }
@@ -99,7 +105,7 @@ export default function Navbar() {
             </span>
           </div>
         }
-        {user ? <a onClick={signout} className="btn mx-4 bg-neutral-content opacity-90">Signout</a> : <Link to='/login' className="btn">Signin</Link>}
+        {user ? <a onClick={signout} className="btn mx-4 bg-neutral-content opacity-90 dark:text-white">Logout</a> : <Link to='/login' className="btn dark:text-white">Login</Link>}
       </div>
     </div>
   );

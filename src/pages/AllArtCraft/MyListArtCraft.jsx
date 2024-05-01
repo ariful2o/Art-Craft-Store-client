@@ -16,7 +16,7 @@ export default function MyListArtCraft() {
       confirmButtonText: "Yes, delete it!"
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/myartcraft/${id}`, { method: "DELETE" })
+        fetch(`https://art-craft-store-server-three.vercel.app/myartcraft/${id}`, { method: "DELETE" })
           .then(res => res.json())
           .then(data => {
             data.acknowledged && Swal.fire({

@@ -1,20 +1,20 @@
-import { Navigate, useLoaderData } from "react-router-dom";
+import { useContext } from "react";
+import { useLoaderData, useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
 import Blog from "../components/Blog";
 import auth from "../firebase/firebase.init";
-import { toast, ToastContainer } from "react-toastify";
-import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 
 
 export default function Blogs() {
     const blogs = useLoaderData()
     const {user}=useContext(AuthContext)
-    console.log(blogs)
+    const navigate=useNavigate()
 
     const handleBlogPost = (e) => {
         e.preventDefault()
         if (!user) {
-            <Navigate state={location?.pathname} to="/login"></Navigate>
+            navigate('/login')
             return
         }
         const date = auth.currentUser?.metadata?.lastSignInTime
@@ -24,7 +24,7 @@ export default function Blogs() {
         const description = form.get('description')
         const blog = { title, image, description, date }
 
-        fetch('http://localhost:5000/addblog', {
+        fetch('https://art-craft-store-server-three.vercel.app/addblog', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -69,6 +69,6 @@ export default function Blogs() {
                 <button>close</button>
             </form>
         </dialog>
-        <button onClick={() => document.getElementById('my_modal_2').showModal()} className="btn btn-outline btn-info block mx-auto">Add New Blog</button>
+        <button onClick={() => document.getElementById('my_modal_2').showModal()} className="btn btn-outline btn-info block mx-auto my-4">Add New Blog</button>
     </>)
 }

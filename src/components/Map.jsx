@@ -27,7 +27,7 @@ const markers = [
 export default function Map() {
     return (
         <>
-            <MapContainer center={[48.8546, 2.3522]} zoom={14}>
+            <MapContainer center={[48.8546, 2.3522]} zoom={15}>
                 <TileLayer
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 

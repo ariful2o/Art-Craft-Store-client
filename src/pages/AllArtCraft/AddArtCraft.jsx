@@ -23,7 +23,7 @@ export default function AddArtCraft() {
     const customization = form.get('customization')
     const artCraftData = { name, image, email, item_name, subcategory_Name, processing_time, description, price, rating, stock, customization }
 
-    fetch('http://localhost:5000/addartcraft', {
+    fetch('https://art-craft-store-server-three.vercel.app/addartcraft', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
