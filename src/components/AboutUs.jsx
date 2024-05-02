@@ -8,7 +8,7 @@ export default function AboutUs() {
         </Fade>
 
         <div className="flex flex-col md:flex-row">
-            <Fade delay={600} className="w-full md:w-1/2 animate__animated animate__bounce animate__fadeIn">
+            <Fade delay={400} className="w-full md:w-1/2 animate__animated animate__bounce animate__fadeIn">
                 <img className="w-full h-full p-2" src={`https://bw-craftxtore.bzotech.com/demo5/wp-content/uploads/2023/11/banner2-home5.webp`} alt="" />
             </Fade>
             <div className="p-8">

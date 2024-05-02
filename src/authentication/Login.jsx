@@ -64,7 +64,7 @@ export default function Login() {
                 <span className="label-text">Password</span>
               </label>
               <input type={!showPassword ? "text" : "password"} name="password" placeholder="password" className="input input-bordered" required />
-              <div className="absolute right-11 top-[250px]">
+              <div className="absolute right-4 top-1/2">
                 {showPassword ? <span onClick={handleShowPassWord}><FaRegEye /></span> : <span onClick={handleShowPassWord}><FaRegEyeSlash /></span>
                 }
               </div>
@@ -90,13 +90,13 @@ export default function Login() {
             </button>
           </Fade>
           <Fade delay={380} direction="right">
-            <button onClick={handleGithubLogin} className="text-white bg-[#1da1f2] hover:bg-[#1da1f2]/90 focus:ring-4 focus:outline-none focus:ring-[#1da1f2]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#1da1f2]/55 me-2 mb-2 gap-2">
-              <FaGithub />
-              Login With GitHub
-            </button>
-          </Fade>
-        </div>
+          <button onClick={handleGithubLogin} className="text-white bg-[#1da1f2] hover:bg-[#1da1f2]/90 focus:ring-4 focus:outline-none focus:ring-[#1da1f2]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#1da1f2]/55 me-2 mb-2 gap-2">
+            <FaGithub />
+            Login With GitHub
+          </button>
+        </Fade>
       </div>
+    </div>
     </div >
   )
 }

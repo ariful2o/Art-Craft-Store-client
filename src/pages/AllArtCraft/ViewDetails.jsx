@@ -65,18 +65,18 @@ export default function ViewDetails() {
       </div>
       <div className="col-span-2 flex gap-8 my-10 pl-8">
         <Fade delay={500} direction="up">
-          <div className="w-1/4 space-y-4">
+          <div className="w-1/4 space-y-4 min-w-64">
             <h2 className="text-xl">Name : {name}</h2>
             <p>Email: {email}</p>
           </div>
         </Fade>
         <div className="divider divider-horizontal"></div>
-        <Fade delay={650} direction="right">
           <div className="w-3/4">
+        <Fade delay={650} direction="right">
             <h4 className="text-2xl">Description</h4>
             <p className="text-[#C1C3C2] p-4">{description}</p>
-          </div>
         </Fade>
+          </div>
       </div>
     </div>
   )

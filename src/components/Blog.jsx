@@ -24,7 +24,7 @@ export default function Blog({ blog }) {
                 <Fade delay={250} direction='right'>
                     <h2 className="card-title ">{title}</h2>
                 </Fade>
-                <Fade delay={300} direction='right'>
+                <Fade delay={350} direction='right'>
                     <p>{showFullDescription ? description : description.slice(0, 70)}</p>
                 </Fade>
                 <div className="card-actions">

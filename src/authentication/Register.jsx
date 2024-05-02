@@ -6,6 +6,7 @@ import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import auth from "../firebase/firebase.init";
 import { AuthContext } from "../provider/AuthProvider";
+import { Fade } from "react-awesome-reveal";
 
 
 export default function Register() {
@@ -101,7 +102,9 @@ export default function Register() {
   return (
     <div className="min-h-svh flex items-center bg-base-200"><ToastContainer />
       <div className="card shrink-0 w-full max-w-2xl mx-auto shadow-2xl bg-base-100">
+        <Fade delay={200} direction="down">
         <h2 className="text-center font-black text-4xl my-4">Register Now</h2>
+        </Fade>
         <form className="card-body" onSubmit={handleRegister}>
           <div className="form-control">
             <label className="label">
