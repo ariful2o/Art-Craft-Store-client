@@ -27,42 +27,42 @@ export default function Slider() {
                     <div className="item" style={{ backgroundImage: "url(https://capricathemes.com/opencart/OPC02/OPC020033/image/catalog/cms-banner.jpg)" }}>
                         <div className="content">
                             <div className="name">Ceramic Art</div>
-                            <div className="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!</div>
+                            <div className="des">Craft ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!</div>
                             <button>See More</button>
                         </div>
                     </div>
                     <div className="item" style={{ backgroundImage: "url(https://capricathemes.com/opencart/OPC02/OPC020033/image/cache/catalog/main-banner-1-1903x975.jpg)" }}>
                         <div className="content">
                             <div className="name">Handmade Ceramics</div>
-                            <div className="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!</div>
+                            <div className="des">Craft ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!</div>
                             <button>See More</button>
                         </div>
                     </div>
                     <div className="item" style={{ backgroundImage: "url(https://capricathemes.com/opencart/OPC02/OPC020033/image/cache/catalog/main-banner-2-1903x975.jpg)" }}>
                         <div className="content">
                             <div className="name">Wooden Crafts</div>
-                            <div className="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!</div>
+                            <div className="des">Craft ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!</div>
                             <button>See More</button>
                         </div>
                     </div>
                     <div className="item" style={{ backgroundImage: "url(https://capricathemes.com/opencart/OPC02/OPC020033/image/cache/catalog/blog-5-893x752.jpg)" }}>
                         <div className="content">
                             <div className="name">Handmade Ceramics</div>
-                            <div className="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!</div>
+                            <div className="des">Craft ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!</div>
                             <button>See More</button>
                         </div>
                     </div>
                     <div className="item" style={{ backgroundImage: "url(http://artcrafts.wpengine.com/wp-content/uploads/2017/07/12.jpg)" }}>
                         <div className="content">
                             <div className="name">Reprehander Pariatur</div>
-                            <div className="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!</div>
+                            <div className="des">Craft ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!</div>
                             <button>See More</button>
                         </div>
                     </div>
                     <div className="item" style={{ backgroundImage: "url(https://bw-craftxtore.bzotech.com/wp-content/uploads/2023/07/blog-post-2.webp)" }}>
                         <div className="content">
                             <div className="name">Japanese ceramic</div>
-                            <div className="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!</div>
+                            <div className="des">Craft ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!</div>
                             <button>See More</button>
                         </div>
                     </div>

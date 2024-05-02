@@ -23,8 +23,12 @@ export default function Banner() {
 
                             />
                         </h1>
-                        <p className="mb-5">There are many variations of passages of them.</p>
-                        <button className="btn">Get Started</button>
+                        <Fade delay={400} direction="up">
+                            <p className="mb-5">There are many variations of passages of them.</p>
+                        </Fade>
+                        <Fade delay={480} direction="up">
+                            <button className="btn">Get Started</button>
+                        </Fade>
                     </div>
                 </Fade>
             </div>

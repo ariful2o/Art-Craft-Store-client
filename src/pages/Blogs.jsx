@@ -4,12 +4,13 @@ import { ToastContainer, toast } from "react-toastify";
 import Blog from "../components/Blog";
 import auth from "../firebase/firebase.init";
 import { AuthContext } from "../provider/AuthProvider";
+import { Fade } from "react-awesome-reveal";
 
 
 export default function Blogs() {
     const blogs = useLoaderData()
-    const {user}=useContext(AuthContext)
-    const navigate=useNavigate()
+    const { user } = useContext(AuthContext)
+    const navigate = useNavigate()
 
     const handleBlogPost = (e) => {
         e.preventDefault()
@@ -34,12 +35,13 @@ export default function Blogs() {
             .then(res => res.json())
             .then(data => {
                 data.acknowledged && toast.success('Blog Post Success')
-                console.log(data)
             })
     }
 
     return (<>
-        <h2 className="text-center text-3xl text-[#70D2C0] my-10">Latest News & Events</h2>
+        <Fade delay={200} direction="down">
+            <h2 className="text-center text-3xl text-[#70D2C0] my-10">Latest News & Events</h2>
+        </Fade>
         <ToastContainer />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 my-10">
             {
@@ -57,7 +59,7 @@ export default function Blogs() {
                     </label>
                     <label className="input input-bordered flex items-center gap-2 my-8">
                         Image URL
-                        <input name="image" type="text" className="grow" placeholder="http://blogsimg.jpg" />
+                        <input name="image" type="text" className="grow" placeholder="http://blogImage.jpg" />
                     </label>
                     <label className=" flex items-center gap-2">
                         <textarea name="description" className="textarea textarea-primary w-full" placeholder="Description"></textarea>

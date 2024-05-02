@@ -69,8 +69,7 @@ export default function Register() {
         }).then(() => {
           // Profile updated!
           // ...
-        }).catch((error) => {
-          console.log(error)
+        }).catch(() => {
         });
         e.target.reset()
         //update data
