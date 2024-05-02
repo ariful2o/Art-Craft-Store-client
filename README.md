@@ -17,26 +17,29 @@ Welcome to the Art & Craft Store project! This is a web application aimed at pro
 
     Here are the key packages used in this project:
 
-   **@emotion/react:** CSS-in-JS library for styling React components.
-   **animate.css:** A library of ready-to-use animations.
-   **firebase:** Provides tools and infrastructure for building web apps with real-time features.
-   **leaflet:** An open-source JavaScript library for mobile-friendly interactive maps.
-   **localforage:** A fast and simple storage library for storing data locally in the browser.
-   **match-sorter:** A library for fuzzy searching and sorting collections.
-   **prop-types:** Runtime type checking for React props.
-   **react:** JavaScript library for building user interfaces.
-   **react-awesome-reveal:** A React library for animating elements as they enter the viewport.
-   **react-dom:** Entry point to the DOM and server renderers for React.
-   **react-helmet-async:** Declarative, efficient, and flexible JavaScript library for managing document head in React.
-   **react-icons:** Icons for popular icon libraries like Font Awesome, Material Icons, etc., as React components.
-   **react-leaflet:** React components for Leaflet maps.
-   **react-router-dom:** Declarative routing for React applications.
-   **react-select:** A flexible and powerful Select Input control for ReactJS with multiselect, autocomplete, async and creatable support.
-   **react-simple-typewriter:** A simple typewriter effect component for React.
-   **react-toastify:** A simple, customizable toast notification library for React.
-   **react-tooltip:** Tooltip component for React applications.
-   **sort-by:** Utility function for sorting arrays of objects by one or more properties.
-   **sweetalert2:** A beautiful, responsive, customizable, accessible (WAI-ARIA) replacement for JavaScript's popup boxes.
+  - **@emotion/react:** CSS-in-JS library for styling React components.
+  - **@emotion/react:** CSS-in-JS library for styling React components.
+  - **@emotion/react:** CSS-in-JS library for styling React components.
+  - **@emotion/react:** CSS-in-JS library for styling React components.
+  - **animate.css:** A library of ready-to-use animations.
+  - **firebase:** Provides tools and infrastructure for building web apps with real-time features.
+  - **leaflet:** An open-source JavaScript library for mobile-friendly interactive maps.
+  - **localforage:** A fast and simple storage library for storing data locally in the browser.
+  - **match-sorter:** A library for fuzzy searching and sorting collections.
+  - **prop-types:** Runtime type checking for React props.
+  - **react:** JavaScript library for building user interfaces.
+  - **react-awesome-reveal:** A React library for animating elements as they enter the viewport.
+  - **react-dom:** Entry point to the DOM and server renderers for React.
+  - **react-helmet-async:** Declarative, efficient, and flexible JavaScript library for managing document head in React.
+  - **react-icons:** Icons for popular icon libraries like Font Awesome, Material Icons, etc., as React components.
+  - **react-leaflet:** React components for Leaflet maps.
+  - **react-router-dom:** Declarative routing for React applications.
+  - **react-select:** A flexible and powerful Select Input control for ReactJS with multiselect, autocomplete, async and creatable support.
+  - **react-simple-typewriter:** A simple typewriter effect component for React.
+  - **react-toastify:** A simple, customizable toast notification library for React.
+  - **react-tooltip:** Tooltip component for React applications.
+  - **sort-by:** Utility function for sorting arrays of objects by one or more properties.
+  - **sweetalert2:** A beautiful, responsive, customizable, accessible (WAI-ARIA) replacement for JavaScript's popup boxes.
 
 
 ## Installation
