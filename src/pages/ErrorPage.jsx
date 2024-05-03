@@ -1,21 +1,20 @@
 
 import { Link, useRouteError } from "react-router-dom";
+import error404 from '../assets/404.svg'
 
 export default function ErrorPage() {
   const error = useRouteError();
+  console.error(error);
+
   return (
-    <div id="error-page" className="text-center mt-44">
-      
-      <h1 className="text-9xl font-sotify my-10">Oops!</h1>
-      <p className="italic text-xl my-4">Sorry, an unexpected error has occurred.</p>
-      <p className="text-6xl text-red-500">
+    <div id="error-page" className="text-center space-y-6">
+      <img className="w-full h-[600px]" src={error404} alt="" />
+      <h1 className="text-9xl">Oops!</h1>
+      <p>Sorry, an unexpected error has occurred.</p>
+      <p className="text-3xl text-red-400">
         <i>{error.statusText || error.message}</i>
       </p>
-      <p className="mt-10">
-        <Link to="/">
-          <button className="btn btn-primary rounded-3xl">Go Back Home</button>
-        </Link>
-      </p>
+      <Link to="/" className="btn btn-outline btn-error">Back Home</Link>
     </div>
   );
 }

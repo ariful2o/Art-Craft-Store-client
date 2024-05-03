@@ -23,11 +23,11 @@ export default function Navbar() {
 
   //navlinks
   const navlinks = <>
-    <Link to='/'>Home</Link>
-    <Link to='/allartcraft'>All Art & craft</Link>
-    <Link to={`/myartcraft/${currentUser}`}>My Art & Craft</Link>
-    <Link to='/addartcraft'>Add Art & Craft</Link>
-    <Link to='/blogs'>Blogs</Link>
+    <li><Link to='/'>Home</Link></li>
+    <li><Link to='/allartcraft'>All Art & craft</Link></li>
+    <li><Link to={`/myartcraft/${currentUser}`}>My Art & Craft</Link></li>
+    <li><Link to='/addartcraft'>Add Art & Craft</Link></li>
+    <li><Link to='/blogs'>Blogs</Link></li>
     {
       !user && <><Link to='/login'>Login</Link><Link to='/register'>Register</Link></>
     }
