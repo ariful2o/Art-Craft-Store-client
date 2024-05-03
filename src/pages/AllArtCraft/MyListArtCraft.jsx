@@ -64,7 +64,7 @@ export default function MyListArtCraft() {
         </div>
       </Fade>
 
-      <div className="grid grid-cols-1 md:grid-cols-3  my-10 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  my-10 gap-8">
         {!myArtCraft ? <div className="justify-center flex my-20"><span className="loading loading-spinner loading-lg"></span></div> : myArtCraft.map(item => {
           return (
             <div key={item._id} className="card w-full md:w-96 bg-base-100 shadow-xl mx-auto">
